@@ -12,6 +12,9 @@ module.exports = {
         'primary-400': '#D93D4A',
         'bannerBG-primary': '#F2F2F2',
         'bannerBG-secondary': '#8C837B'
+      },
+      content: {
+        bannerNew: "url('../public/images/new.png')"
       }
     },
   },

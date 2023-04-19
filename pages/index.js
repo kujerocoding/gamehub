@@ -1,4 +1,4 @@
-import { Navbar } from '@/components'
+import { HeroBanner, Navbar } from '@/components'
 import Head from 'next/head'
 import React from 'react'
 
@@ -11,6 +11,7 @@ const index = () => {
         <meta name='author' content='Jerome Manset'/>
       </Head>
       <Navbar />
+      <HeroBanner />
     </>
   )
 }
