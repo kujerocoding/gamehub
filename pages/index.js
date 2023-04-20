@@ -19,7 +19,7 @@ const index = ({products, bannerData}) => {
         <h2>Popular Products</h2>
         <p>lorem ipsum</p>
       </div>
-      <div className='flex flex-col border-2 border-yellow-500 md:flex-row items-center md:items-end justify-center gap-4'>
+      <div className='w-11/12 mx-auto py-6 flex border-2 border-yellow-500 flex-wrap items-center justify-center gap-4'>
         {products.map(product => <Product key={product._id} product={product} />)}
       </div>
     </>
