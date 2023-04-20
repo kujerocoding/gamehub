@@ -13,7 +13,7 @@ const Product = ({product: {image, name, slug, price}}) => {
                 <p className='text-white uppercase'>{name}</p>
                 <p className='text-white font-bold'>${price}</p>
             </div>
-            
+
         </div>
       </Link>
     
