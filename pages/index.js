@@ -1,7 +1,8 @@
-import { HeroBanner, Navbar } from '@/components'
+import { HeroBanner, Navbar, Product } from '@/components'
 import Head from 'next/head'
 import React from 'react'
 import {client} from '../lib/client'
+
 
 const index = ({products, bannerData}) => {
   return (
@@ -14,12 +15,12 @@ const index = ({products, bannerData}) => {
       <Navbar />
       <HeroBanner heroBanner={bannerData.length && bannerData[0]}/>
       
-      <div>
+      <div className='py-10 text-center text-white'>
         <h2>Popular Products</h2>
         <p>lorem ipsum</p>
       </div>
-      <div>
-        {products.map(product => product.name)}
+      <div className='flex flex-col border-2 border-yellow-500 md:flex-row items-center md:items-end justify-center gap-4'>
+        {products.map(product => <Product key={product._id} product={product} />)}
       </div>
     </>
   )

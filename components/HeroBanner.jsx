@@ -5,8 +5,6 @@ import { urlFor } from '@/lib/client'
 
 const HeroBanner = ({heroBanner}) => {
 
-  
-
   return (
     <div className='bg-bannerBG-primary w-11/12 mx-auto mt-4 px-8 py-6 border-2 border-red-500'>
       <div className='md:flex flex-row-reverse border-2 border-yellow-500'>
