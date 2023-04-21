@@ -2,13 +2,15 @@ import React from 'react'
 import {client, urlFor} from '@/lib/client'
 import {BsFillStarFill, BsFillArrowRightCircleFill, BsFillCartPlusFill} from 'react-icons/bs'
 import {AiFillMinusCircle, AiFillPlusCircle} from 'react-icons/ai'
+import {Product} from '../../components'
 
 const ProductDetails = ({product, products}) => {
     console.log(product)
     const {image, name, details, price} = product
   return (
-    <div className='w-11/12 mx-auto border-4 border-white'>
-      <div className='flex flex-wrap items-center justify-center border-2 border-red-500'>
+    
+        <div className='w-11/12 mx-auto border-2 border-white'>
+        <div className='flex flex-wrap items-center justify-center border-2 border-red-500'>
         <div className='border-2 border-green-500 max-w-md p-4'>
             <img src={urlFor(image && image[0])} />
         </div>
@@ -48,7 +50,16 @@ const ProductDetails = ({product, products}) => {
             </div>
         </div>
       </div>
+      <div className='border-2 border-emerald-500 relative h-[300px] overflow-x-hidden '>
+        <p className='text-white'>Suggested Product</p>
+        <div className='flex gap-4 mx-auto border-2 border-red-500 absolute whitespace-nowrap animate-marquee hover:pause '>
+            {products.map(item => (
+                <Product key={item._id} product={item} />
+            ))}
+        </div>
+      </div>
     </div>
+    
   )
 }
 

@@ -6,7 +6,7 @@ const Product = ({product: {image, name, slug, price}}) => {
     //console.log(image)
   return (
     
-      <Link href={`/product/${slug.current}`}>
+      <Link href={`/product/${slug.current}`} className='hover:scale-105'>
         <div className='w-48 h-64 p-4 bg-slate-300 border-2 border-green-500 flex flex-col justify-between'>
             <img src={urlFor(image && image[0])} className='w-full'/>
             <div>

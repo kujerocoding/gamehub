@@ -15,6 +15,15 @@ module.exports = {
       },
       content: {
         bannerNew: "url('../public/images/new.png')"
+      },
+      animation: {
+        'marquee': 'marquee 15s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(50%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        }
       }
     },
   },

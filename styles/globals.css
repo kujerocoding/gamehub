@@ -8,3 +8,9 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
+
+@layer utilities {
+    .pause {
+      animation-play-state: paused;
+    }
+ }
