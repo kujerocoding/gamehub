@@ -14,8 +14,8 @@ const FooterBanner = ({footerBanner: {image,discount, largeText1, largeText2, sa
         <p className='text-6xl'>{largeText2}</p>
         
       </div>
-      <div className='basis-1/3 md:order-3 flex flex-col gap-4 border-2 border-green-400'>
-        <p className='text-lg'>{discount}</p>
+      <div className='basis-1/3 md:order-3 flex flex-col items-start gap-4 border-2 border-green-400'>
+        <p className='text-white text-lg bg-red-500'>{discount}</p>
         <p className='text-lg'>{saleTime}</p>
         <Link href={`/product/${product}`}>
             <button type='button' className='text-white rounded-full py-4 px-8 bg-primary-400'>{buttonText}</button>
