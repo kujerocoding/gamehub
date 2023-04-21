@@ -3,7 +3,7 @@ import {BsFacebook, BsInstagram, BsTwitter  } from 'react-icons/bs'
 
 const Footer = () => {
   return (
-    <div className='border-2 border-orange-500 flex flex-col items-center justify-center gap-4 py-10 text-white'>
+    <div className='w-11/12 mx-auto border-2 border-orange-500 flex flex-col items-center justify-center gap-4 py-10 text-white'>
       <p>Follow us</p>
       <div className='flex gap-4'>
         <BsFacebook className='hover:text-black'/>

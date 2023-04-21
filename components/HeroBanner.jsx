@@ -6,12 +6,12 @@ import { urlFor } from '@/lib/client'
 const HeroBanner = ({heroBanner}) => {
 
   return (
-    <div className='bg-bannerBG-primary w-11/12 mx-auto mt-4 px-8 py-6 border-2 border-red-500'>
+    <div className='bg-bannerBG-primary w-11/12 mx-auto px-8 py-6 border-2 border-red-500'>
       <div className='md:flex flex-row-reverse border-2 border-yellow-500'>
         <div className='relative flex items-center justify-center basis-1/2 border-2 border-green-500'>
             <div className='before:absolute before:top-0 before:right-0 before:content-bannerNew before:scale-75 md:before:scale-100'>
             </div>
-            <img src={urlFor(heroBanner.image)} className='w-4/6' alt='atx'/>
+            <img src={urlFor(heroBanner.image)} className='max-w-xs' alt='atx'/>
         </div>
 
         <div className='basis-1/2 flex flex-col justify-center gap-4 border-2 border-pink-500'>
