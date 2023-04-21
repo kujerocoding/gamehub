@@ -4,7 +4,7 @@ import { urlFor } from '@/lib/client'
 
 const FooterBanner = ({footerBanner: {image,discount, largeText1, largeText2, saleTime, product,buttonText}}) => {
   return (
-    <div>
+    <div className='w-11/12 border-2 border-white'>
       <div>
         <img src={urlFor(image)} alt="" />
       </div>
