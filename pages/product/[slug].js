@@ -8,7 +8,7 @@ import { useStateContext } from '@/context/StateContext'
 const ProductDetails = ({product, products}) => {
     const [index, setIndex] = useState(0)
     const {image, name, details, price} = product
-    const {incQty, decQty, qty} = useStateContext()
+    const {incQty, decQty, qty, onAdd} = useStateContext()
   return (
     
         <div className='w-11/12 mx-auto border-2 border-white'>
@@ -62,7 +62,10 @@ const ProductDetails = ({product, products}) => {
                 </div>
             </div>
             <div className='flex flex-wrap gap-4'>
-                <button className='bg-slate-200 text-red-500 border-2 border-red-500 py-3 w-5/6 mx-auto '>Add To Cart &nbsp; 
+                <button className='bg-slate-200 text-red-500 border-2 border-red-500 py-3 w-5/6 mx-auto '
+                    onClick={() => onAdd(product, qty)}
+                >
+                    Add To Cart &nbsp; 
                 <span><BsFillCartPlusFill className='inline' /></span></button>
                 <button className='block bg-yellow-500 py-3 w-5/6 mx-auto'>Buy Now &nbsp; 
                 <span><BsFillArrowRightCircleFill className='inline' /></span></button>
