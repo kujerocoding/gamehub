@@ -9,6 +9,9 @@ export const StateContext = ({ children }) => {
     const [totalQuantities, setTotalQuantities] = useState(0)
     const [qty, setQty] = useState(1)
 
+    let foundProduct;
+    let index;
+
     const incQty = () => {
         setQty(prevQty => prevQty + 1)
     }
