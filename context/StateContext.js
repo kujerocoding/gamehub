@@ -14,10 +14,11 @@ export const StateContext = ({ children }) => {
     }
 
     const decQty = () => {
-        setQty(prevQty => {
-            prevQty - 1 < 1 ? 1 : prevQty - 1
-        })
+        setQty(prevQty => 
+            prevQty - 1 < 1 ?  1 : prevQty - 1
+        )
     }
+
 
     return (
         <Context.Provider
@@ -35,3 +36,5 @@ export const StateContext = ({ children }) => {
         </Context.Provider>
     )
 }
+
+export const useStateContext = () => useContext(Context)

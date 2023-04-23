@@ -3,10 +3,12 @@ import {client, urlFor} from '@/lib/client'
 import {BsFillStarFill, BsFillArrowRightCircleFill, BsFillCartPlusFill} from 'react-icons/bs'
 import {AiFillMinusCircle, AiFillPlusCircle} from 'react-icons/ai'
 import {Product} from '../../components'
+import { useStateContext } from '@/context/StateContext'
 
 const ProductDetails = ({product, products}) => {
     const [index, setIndex] = useState(0)
     const {image, name, details, price} = product
+    const {incQty, decQty, qty} = useStateContext()
   return (
     
         <div className='w-11/12 mx-auto border-2 border-white'>
@@ -50,9 +52,13 @@ const ProductDetails = ({product, products}) => {
             <div className=' flex items-center gap-4'>
                 <p>Quantity </p>
                 <div className='items-center border-2 border-white inline-flex '>
-                    <button className='p-3 '><AiFillMinusCircle /></button>
-                    <p className='py-2 px-6 border-r-2 border-l-2 border-white'>1</p>
-                    <button className='p-3 '><AiFillPlusCircle /></button>
+                    <button type='button' className='p-2 active:bg-red-500' onClick={decQty}>
+                        <AiFillMinusCircle className='w-6 h-6' />
+                    </button>
+                    <p className='py-2 px-6 border-r-2 border-l-2 border-white'>{qty}</p>
+                    <button type='button' className='p-2 active:bg-green-500' onClick={incQty}>
+                        <AiFillPlusCircle className='w-6 h-6' />
+                    </button>
                 </div>
             </div>
             <div className='flex flex-wrap gap-4'>
