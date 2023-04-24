@@ -6,8 +6,8 @@ import {AiFillMinusCircle, AiFillPlusCircle} from 'react-icons/ai'
 
 const Cart = () => {
     
-    const { totalPrice, cartItems, totalQuantities, showCart, setShowCart, toggleCartItemQuantity} = useStateContext()
-    console.log(cartItems)
+    const { totalPrice, cartItems, totalQuantities, showCart, setShowCart, toggleCartItemQuantity , onRemove} = useStateContext()
+    
   return (
 
         <div className='absolute top-0 right-0 flex bg-white/30 w-full h-full z-50 backdrop-blur-sm border-2 border-black overflow-y-auto'>
@@ -52,7 +52,7 @@ const Cart = () => {
                             </div>
                         </div>
                         <div>
-                            <button>Delete</button>
+                            <button type="button" onClick={() => onRemove(item)}>Delete</button>
                         </div>
                     </div>
                 </div>           
