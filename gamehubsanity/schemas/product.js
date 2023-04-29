@@ -36,6 +36,11 @@ export default {
         title: 'Details',
         type: 'string',
       },
+      {
+        name: 'tags',
+        title: 'Tags',
+        type: 'string',
+      },
     ],
   }
   

@@ -8,10 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        'primary-500': '#590202',
-        'primary-400': '#D93D4A',
-        'bannerBG-primary': '#F2F2F2',
-        'bannerBG-secondary': '#8C837B'
+        'primary-500': '#D9BC66',
+        'primary-400': '#A68A56',
+        'secondary-200': '#5A5A5A',
+        'btnColor' : '#BF9460',
+        'bannerBG': '#3F3D40',
+        'product-primary': '#3F3D40',
+        'product-secondary': '#1E1E1E',
+        
       },
       content: {
         bannerNew: "url('../public/images/new.png')"
@@ -24,6 +28,11 @@ module.exports = {
           '0%': { transform: 'translateX(50%)' },
           '100%': { transform: 'translateX(-50%)' },
         }
+      },
+      fontFamily: {
+        'bebas': ['Bebas Neue', 'cursive'],
+        'bruno': ['Bruno Ace', 'cursive'],
+        'inter': ['Inter', 'sans-serif'],
       }
     },
   },

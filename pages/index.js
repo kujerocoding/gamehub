@@ -10,8 +10,8 @@ const index = ({products, bannerData}) => {
       
       
       <div className='w-11/12 mx-auto py-6 text-center text-white border-2 border-emerald-500'>
-          <h2>Popular Products</h2>
-          <p>lorem ipsum</p>
+          <h2 className='font-inter font-bold text-xl text-primary-500'>Popular Products</h2>
+          <p className='font-inter text-sm text-primary-400'>Elevate Your Gaming Experience with Our Computer Peripherals</p>
         <div className='py-6 flex border-2 border-yellow-500 flex-wrap items-center justify-center gap-4'>
           {products.map(product => <Product key={product._id} product={product} />)}
         </div>
