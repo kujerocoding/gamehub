@@ -12,14 +12,14 @@ const HeroBanner = ({heroBanner}) => {
             
             <img src={urlFor(heroBanner.image)} className='max-w-xs' alt='atx'/>
             <div className='relative w-1 h-1'>
-              <div className='before:absolute before:-top-40 before:right-0 before:content-bannerNew before:scale-75'>
+              <div className='before:absolute before:-top-40 before:-right-10 before:content-bannerNew before:scale-75'>
               </div>
             </div>
         </div>
 
         <div className='basis-1/2 flex flex-col justify-center gap-4'>
-            <p className='font-inter text-primary-400'>{heroBanner.smallText}</p>
-            <h1 className='font-bruno text-5xl text-primary-500 uppercase'>{heroBanner.product}</h1>
+            <p className='font-inter text-2xl text-primary-400'>{heroBanner.smallText}</p>
+            <h1 className='font-bruno text-5xl text-primary-500 uppercase'>{heroBanner.largeText1}</h1>
             <p className='font-inter text-2xl text-primary-400 uppercase'>{heroBanner.midText}</p>
             <div>
               <Link href={`/product/${heroBanner.product}`}>

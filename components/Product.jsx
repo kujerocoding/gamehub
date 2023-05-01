@@ -10,7 +10,7 @@ const Product = ({product: {image, name, slug, price, details, tags}}) => {
     
       <Link href={`/product/${slug.current}`} className='hover:scale-105 transition ease-in-out'>
         <div className='w-[250px] h-[450px] flex flex-col justify-between'>
-            <div className='basis-3/5 bg-product-primary p-4'>
+            <div className='h-3/5 bg-product-primary p-4'>
               <img src={urlFor(image && image[0])} className='w-full'/>
             </div>
             <div className='basis-2/5 bg-product-secondary p-4 flex flex-col justify-between font-inter'>
