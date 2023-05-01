@@ -11,7 +11,7 @@ const ProductDetails = ({product, products}) => {
     const {incQty, decQty, qty, onAdd} = useStateContext()
   return (
     
-        <div className='w-11/12 mx-auto border-2 border-white'>
+        <div className='w-11/12 mx-auto'>
         <div className='flex flex-wrap items-center justify-around p-4'>
         <div className='flex items-center justify-center max-w-md h-96'>
             <div className=' flex flex-col justify-between w-1/5'>

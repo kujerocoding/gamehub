@@ -13,9 +13,9 @@ const Product = ({product: {image, name, slug, price, details, tags}}) => {
             <div className='basis-3/5 bg-product-primary p-4'>
               <img src={urlFor(image && image[0])} className='w-full'/>
             </div>
-            <div className='basis-2/5 bg-product-secondary p-4 flex flex-col justify-between'>
-                <p className='text-primary-400 font-bold font-inter uppercase'>{name}</p>
-                <p className='text-secondary-200 capitalize'>{details}</p>
+            <div className='basis-2/5 bg-product-secondary p-4 flex flex-col justify-between font-inter'>
+                <p className='text-primary-400 font-bold uppercase'>{name}</p>
+                <p className='text-secondary-200 capitalize text-sm'>{details}</p>
                 <p className='text-primary-400 font-bold'>₱ {`${formattedPrice}.00`}</p>
                 <p className='text-secondary-200 text-sm'>Tags: {tags}</p>
             </div>
