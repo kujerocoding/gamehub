@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {client, urlFor} from '@/lib/client'
-import {BsFillStarFill, BsFillArrowRightCircleFill, BsFillCartPlusFill} from 'react-icons/bs'
-import {AiFillMinusCircle, AiFillPlusCircle} from 'react-icons/ai'
+import {AiOutlineStar, AiFillStar, AiFillMinusCircle, AiFillPlusCircle} from 'react-icons/ai'
 import {Product} from '../../components'
 import { useStateContext } from '@/context/StateContext'
 
@@ -9,73 +8,80 @@ const ProductDetails = ({product, products}) => {
     const [index, setIndex] = useState(0)
     const {image, name, details, price} = product
     const {incQty, decQty, qty, onAdd} = useStateContext()
+
+    const filteredProducts = products.filter(item => item.slug.current !== product.slug.current)
+    const formattedPrice = price.toLocaleString()
   return (
     
-        <div className='w-11/12 mx-auto'>
-        <div className='flex flex-wrap items-center justify-around p-4'>
-        <div className='flex items-center justify-center max-w-md h-96'>
-            <div className=' flex flex-col justify-between w-1/5'>
+        <div className='w-11/12 mx-auto border-b-2 border-secondary-200'>
+        <div className='flex flex-wrap items-center justify-center gap-6 p-4'>
+        <div className='flex items-center max-w-xl h-96 md:h-[450px] overflow-y-auto'>
+            <div className='flex flex-col w-1/5 border-t-2 border-l-2 border-r-2 border-product-primary'>
                 {image?.map((item, i) => (
                     <img
                     key={item._id} 
                     src={urlFor(item)}
                     onMouseEnter={() => setIndex(i)}
-                    className='w-4/5 h-3/4 outline-2 outline outline-gray-300 bg-gray-200 hover:bg-gray-500 p-2'
+                    className='w-full h-3/4 p-2 hover:bg-btnColor border-b-2 border-product-primary transition ease-in-out duration-300'
                     />
                 ))}
             </div>
-            <div className='flex items-center justify-center p-4 w-3/4 h-3/4 b bg-gray-200'>
+            <div className='flex items-center justify-center w-full h-full'>
                 <img src={urlFor(image && image[index])} className='w-full h-full' />
             </div>
             
         </div>
-        <div className='flex flex-col gap-4 basis-1/2 text-white'>
-            <h1 className='text-3xl font-bold uppercase'>{name}</h1>
+        <div className='flex flex-col gap-4 text-primary-400'>
+            <h1 className='text-3xl font-bold uppercase text-primary-500'>{name}</h1>
             <div className='flex flex-wrap gap-2 md:gap-8'>
-                <div className='flex items-center gap-1'>
-                    <BsFillStarFill />
-                    <BsFillStarFill />
-                    <BsFillStarFill />
-                    <BsFillStarFill />
-                    <BsFillStarFill />
+                <div className='flex items-center gap-1 text-'>
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiOutlineStar />
                     <p className='text-sm'>&nbsp;Reviews</p>
                     </div>
-                <div>
-                    <p>322 <span className='text-sm'>Sold</span></p>
+                <div className='text-sm'>
+                    <p>322 <span>Sold</span></p>
                 </div>
             </div>
             <div className=''>
-                <p className='font-bold'>Details</p>
-                <p>{details}</p>
+                <p>Details :</p>
+                <p className='text-secondary-200'>{details}</p>
             </div>
-            <h1 className='text-4xl'>₱ {price}.00</h1>
+            <h1 className='text-3xl font-bold'>₱ {formattedPrice}.00</h1>
             <div className=' flex items-center gap-4'>
-                <p>Quantity </p>
-                <div className='items-center border-2 border-white inline-flex '>
-                    <button type='button' className='p-2 active:bg-red-500' onClick={decQty}>
-                        <AiFillMinusCircle className='w-6 h-6' />
+                <p>Quantity : </p>
+                <div className='items-center border-2 border-secondary-200 inline-flex '>
+                    <button type='button' className='px-2 active:text-primary-500' onClick={decQty}>
+                        <AiFillMinusCircle className='w-4 h-4' />
                     </button>
-                    <p className='py-2 px-6 border-r-2 border-l-2 border-white'>{qty}</p>
-                    <button type='button' className='p-2 active:bg-green-500' onClick={incQty}>
-                        <AiFillPlusCircle className='w-6 h-6' />
+                    <p className='px-6 border-r-2 border-l-2 border-secondary-200 text-primary-500'>{qty}</p>
+                    <button type='button' className='px-2 active:text-primary-500' onClick={incQty}>
+                        <AiFillPlusCircle className='w-4 h-4' />
                     </button>
                 </div>
             </div>
-            <div className='flex flex-wrap gap-4'>
-                <button className='bg-slate-200 text-red-500 border-2 border-red-500 py-3 w-5/6 mx-auto '
+            <div className='flex gap-4 md:mt-10'>
+                <button className="basis-1/2 font-bebas py-3 px-6 text-primary-500  bg-product-secondary hover:bg-btnColor hover:text-secondary-300 transition ease-in-out duration-300"
                     onClick={() => onAdd(product, qty)}
                 >
                     Add To Cart &nbsp; 
-                <span><BsFillCartPlusFill className='inline' /></span></button>
-                <button className='block bg-yellow-500 py-3 w-5/6 mx-auto'>Buy Now &nbsp; 
-                <span><BsFillArrowRightCircleFill className='inline' /></span></button>
+                
+                </button>
+
+                <button className="basis-1/2 font-bebas py-3 px-6 text-primary-500  bg-product-secondary hover:bg-btnColor hover:text-secondary-300 transition ease-in-out duration-300">
+                    Buy Now &nbsp; 
+                
+                </button>
             </div>
         </div>
       </div>
-      <div className='border-2 border-emerald-500 relative h-[300px] overflow-x-hidden '>
-        <p className='text-white text-center'>Suggested Product</p>
-        <div className='flex gap-4 mx-auto border-2 border-red-500 absolute whitespace-nowrap animate-marquee hover:pause '>
-            {products.map(item => (
+      <div className='py-16'>
+        <p className='font-bold text-center text-xl text-primary-500 mb-4'>Related Products</p>
+        <div className=' flex gap-4 flex-wrap items-center justify-center'>
+            {filteredProducts.map(item => (
                 <Product key={item._id} product={item} />
             ))}
         </div>

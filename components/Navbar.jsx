@@ -9,7 +9,7 @@ import { useStateContext } from '@/context/StateContext'
 const Navbar = () => {
   const {showCart, setShowCart, totalQuantities} = useStateContext()
   return (
-      <nav className='w-11/12 mt-5 mx-auto flex justify-between items-center py-4'>
+      <nav className='w-11/12 mt-5 mx-auto flex justify-between items-center py-4 drop-shadow-md'>
         <div className='w-32' >
           <Link href='/'>
             <Image src={Logo} alt='Gamehub logo' priority />
