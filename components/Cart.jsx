@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useStateContext } from "@/context/StateContext"
 import { urlFor } from "@/lib/client"
 import {AiFillMinusCircle, AiFillPlusCircle} from 'react-icons/ai'
+import {BsBagX} from 'react-icons/bs'
 
 const Cart = () => {
     
@@ -10,19 +11,22 @@ const Cart = () => {
     
   return (
 
-        <div className='absolute top-0 right-0 flex bg-white/30 w-full h-full z-50 backdrop-blur-sm border-2 border-black overflow-y-auto'>
+        <div className='absolute top-0 right-0 flex bg-white/30 w-full h-full z-50 backdrop-blur-sm overflow-y-auto'>
         <div className='basis-1/3' onClick={() => setShowCart(false)}></div>
-        <div className=' basis-2/3 bg-white p-8 border-2 border-blue-500 overflow-y-auto'>
-            <div className="flex justify-between pb-8">
+        <div className='cart basis-2/3 bg-white p-8 overflow-y-auto text-primary-400'>
+            <div className="flex justify-between pb-8 font-inter">
                 <p>Your Cart <span>({totalQuantities} items)</span></p>
-                <button type='button' className="underline" onClick={() => setShowCart(false)}>Back</button>
+                <button type='button' className="underline hover:text-primary-500" onClick={() => setShowCart(false)}>Back</button>
             </div>
            {/*  EMPTY CART */}
             {cartItems.length < 1 && (
-                <div>
-                    <p>Your shopping bag is empty</p>
+                <div className="flex flex-col items-center justify-center py-16 gap-8">
+                    <BsBagX className="w-20 h-20 " />
+                    <p className="text-primary-400">Your shopping bag is empty.</p>
                     <Link href="/">
-                    <button type='button'  onClick={() => setShowCart(false)}>Continue Shopping</button>
+                    <button type='button'
+                    className="font-bebas py-3 px-6 text-primary-500  bg-product-secondary hover:bg-btnColor hover:text-secondary-300 transition ease-in-out duration-300"  
+                    onClick={() => setShowCart(false)}>Continue Shopping</button>
                     </Link>
                 </div>
             )}
