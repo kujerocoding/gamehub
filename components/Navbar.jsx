@@ -9,7 +9,8 @@ import { useStateContext } from '@/context/StateContext'
 const Navbar = () => {
   const {showCart, setShowCart, totalQuantities} = useStateContext()
   return (
-      <nav className='w-11/12 mt-5 mx-auto flex justify-between items-center py-4 drop-shadow-md'>
+      <nav className='bg-black'>
+        <div className='w-11/12 mx-auto flex justify-between items-center py-6'>
         <div className='w-32' >
           <Link href='/'>
             <Image src={Logo} alt='Gamehub logo' priority />
@@ -20,6 +21,7 @@ const Navbar = () => {
           {totalQuantities > 0 && <span className='absolute -top-2 -right-2 text-white bg-red-500 px-2 rounded-full'>{totalQuantities}</span>}
         </button>}
         {showCart && <Cart />}
+        </div>
       </nav>
   )
 }

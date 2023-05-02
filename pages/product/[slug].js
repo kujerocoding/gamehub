@@ -13,7 +13,7 @@ const ProductDetails = ({product, products}) => {
     const formattedPrice = price.toLocaleString()
   return (
     
-        <div className='w-11/12 mx-auto border-b-2 border-secondary-200'>
+        <div className='w-11/12 mx-auto'>
         <div className='flex flex-wrap items-center justify-center gap-6 p-4'>
         <div className='flex items-center max-w-xl h-96 md:h-[450px] overflow-y-auto'>
             <div className='flex flex-col w-1/5 border-t-2 border-l-2 border-r-2 border-product-primary'>

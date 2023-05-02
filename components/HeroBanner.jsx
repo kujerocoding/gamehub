@@ -5,7 +5,7 @@ import { urlFor } from '@/lib/client'
 const HeroBanner = ({heroBanner}) => {
 
   return (
-    <div className='bg-secondary-300 w-full mx-auto md:px-32 py-16 mt-5'>
+    <div className='bg-secondary-300 w-full mx-auto md:px-32 py-16'>
       <div className='md:flex flex-row-reverse text-center md:text-left'>
         <div className='flex items-center justify-center basis-1/2'>
             <img src={urlFor(heroBanner.image)} className='max-w-xs' alt='atx'/>
