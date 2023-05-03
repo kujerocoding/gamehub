@@ -1,4 +1,4 @@
-import { HeroBanner, Navbar, Product, FooterBanner } from '@/components'
+import { HeroBanner, Product, FooterBanner } from '@/components'
 import React from 'react'
 import {client} from '../lib/client'
 import { motion } from 'framer-motion'
@@ -22,8 +22,9 @@ const index = ({products, bannerData}) => {
                     hidden: {opacity: 0, x:-100, y: -50},
                     visible: {opacity: 1, x:0, y:0}
               }}
+              key={product._id}
             >
-                <Product key={product._id} product={product} />
+                <Product product={product} />
             </motion.div>))}
           </div>
       </div>

@@ -9,6 +9,7 @@ const Layout = ({children}) => {
             <title>GameHub</title>
             <meta name='description' content='Your One-Stop Shop for Gaming Peripherals'/>
             <meta name='author' content='Jerome Manset'/>
+            <link rel="shortcut icon" href="/images/joystick-icon.ico" />
         </Head>
         <header>
             <Navbar />
