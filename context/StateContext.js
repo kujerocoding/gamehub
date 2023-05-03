@@ -50,6 +50,13 @@ export const StateContext = ({ children }) => {
       setCartItems(newCartItems)
     }
 
+    const onBuy = ( product, quantity) => {
+      onAdd(product, quantity )
+      setShowCart(true)
+  }
+
+    
+
     const toggleCartItemQuantity = (id, value) => {
         foundProduct = cartItems.find((item) => item._id === id);
         index = cartItems.findIndex((product) => product._id === id);
@@ -88,7 +95,8 @@ export const StateContext = ({ children }) => {
             incQty,
             decQty,
             onAdd,
-            onRemove
+            onRemove,
+            onBuy
         }}
         >
             {children}

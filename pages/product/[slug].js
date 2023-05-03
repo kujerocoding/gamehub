@@ -7,7 +7,7 @@ import { useStateContext } from '@/context/StateContext'
 const ProductDetails = ({product, products}) => {
     const [index, setIndex] = useState(0)
     const {image, name, details, price} = product
-    const {incQty, decQty, qty, onAdd} = useStateContext()
+    const {incQty, decQty, qty, onAdd, onBuy} = useStateContext()
 
     const filteredProducts = products.filter(item => item.slug.current !== product.slug.current)
   return (
@@ -70,7 +70,9 @@ const ProductDetails = ({product, products}) => {
                 
                 </button>
 
-                <button className="basis-1/2 font-bebas py-3 px-6 text-primary-500  bg-product-secondary hover:bg-btnColor hover:text-secondary-300 transition ease-in-out duration-300">
+                <button className="basis-1/2 font-bebas py-3 px-6 text-primary-500  bg-product-secondary hover:bg-btnColor hover:text-secondary-300 transition ease-in-out duration-300"
+                onClick={() => onBuy(product, qty)}
+                >
                     Buy Now &nbsp; 
                 
                 </button>

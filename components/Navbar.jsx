@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
         {!showCart && <button type='button' className='relative' onClick={() => setShowCart(true)}>
           <BsCart4 className='fill-primary-500 w-7 h-7' />
-          {totalQuantities > 0 && <span className='absolute -top-2 -right-2 text-white bg-red-500 px-2 rounded-full'>{totalQuantities}</span>}
+          {totalQuantities > 0 && <span className='absolute -top-2 -right-2 text-primary-400 bg-white px-2 rounded-full'>{totalQuantities}</span>}
         </button>}
         {showCart && <Cart />}
         </div>
