@@ -11,11 +11,11 @@ const Cart = () => {
     
   return (
 
-        <div className='absolute top-0 right-0 flex bg-white/30 w-full h-full z-50 backdrop-blur-sm overflow-y-auto'>
+        <div className='absolute top-0 right-0 flex bg-white/30 w-full z-50 h-full backdrop-blur-sm overflow-y-auto'>
         <div className='basis-1/3' onClick={() => setShowCart(false)}></div>
-        <div className='cart basis-2/3 bg-white p-8 overflow-y-auto text-primary-400'>
+        <div className='cart basis-2/3 p-2 md:p-8 overflow-y-auto text-primary-400'>
             <div className="flex justify-between pb-8 font-inter">
-                <p>Your Cart <span>({totalQuantities} items)</span></p>
+                <p>Your Cart (<span className="font-bold">{totalQuantities}</span>) items</p>
                 <button type='button' className="underline hover:text-primary-500" onClick={() => setShowCart(false)}>Back</button>
             </div>
            {/*  EMPTY CART */}
@@ -34,30 +34,35 @@ const Cart = () => {
             {/* CART WITH ITEM */}
             {cartItems.length >= 1 && cartItems.map(item => (
                 <div key={item._id}
-                    className="flex flex-wrap items-center justify-evenly p-2 mb-2 bg-gray-200"
+                    className="flex flex-wrap justify-between gap-4 p-2 mb-2 bg-product-secondary"
                 >
-                    <img src={urlFor(item?.image[0])} alt="" className="w-40"/>
-                    <div className="">
+                    <div>
+                        <img src={urlFor(item?.image[0])} alt={`${item.name}`} className="w-32 h-32"/>
+                        <div>
+                            <button type="button" className="underline text-sm" onClick={() => onRemove(item)}>Delete</button>
+                        </div>
+                    </div>
+                    <div className="w-[300px] flex flex-col justify-between">
                         <p className="text-lg uppercase">{item.name}</p>
-                        <p className="capitalize">{item.details}</p>
-                        <p className="text-sm">Unit Price : <span className="text-lg font-bold text-red-500">₱{item.price}</span></p>
+                        <p className="text-sm text-secondary-200 capitalize">{item.details}</p>
+                        
                         <div>
                             <div className=' flex items-center gap-4'>
-                                <p className="text-sm">Quantity </p>
-                                <div className='items-center border-2 border-white inline-flex '>
-                                    <button type='button' className='p-2 active:bg-red-500' onClick={() => toggleCartItemQuantity(item._id, 'dec')}>
-                                        <AiFillMinusCircle className='w-6 h-6' />
+                                <p className="text-sm">Quantity:</p>
+                                <div className='items-center border-2 border-secondary-200 inline-flex '>
+                                    <button type='button' className='px-2 active:text-primary-500' onClick={() => toggleCartItemQuantity(item._id, 'dec')}>
+                                        <AiFillMinusCircle className='w-4 h-4' />
                                     </button>
-                                    <p className='py-2 px-6 border-r-2 border-l-2 border-white'>{item.quantity}</p>
-                                    <button type='button' className='p-2 active:bg-green-500' onClick={() => toggleCartItemQuantity(item._id, 'inc')}>
-                                        <AiFillPlusCircle className='w-6 h-6' />
+                                    <p className=' px-6 border-r-2 text-sm border-l-2 border-secondary-200'>{item.quantity}</p>
+                                    <button type='button' className='px-2 active:text-primary-500' onClick={() => toggleCartItemQuantity(item._id, 'inc')}>
+                                        <AiFillPlusCircle className='w-4 h-4' />
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <button type="button" onClick={() => onRemove(item)}>Delete</button>
-                        </div>
+                        <p className="text-sm">Unit Price : <span className="text-sm ">₱ {item.price.toLocaleString()}.00</span></p>
+                        <p className="text-sm font-bold">Subtotal : <span  className="text-md font-bold">₱ {(item.price * item.quantity).toLocaleString()}.00</span></p>
+                        
                     </div>
                 </div>           
                 ))}
@@ -67,9 +72,9 @@ const Cart = () => {
                     <div className="flex flex-col gap-4 py-8 items-end">
                         <div className="w-full md:w-1/2 flex items-center justify-between">
                             <p>Total Payment :</p>
-                            <p className="text-xl font-bold">{totalPrice}</p>
+                            <p className="text-xl font-bold">₱ {totalPrice.toLocaleString()}.00</p>
                         </div>
-                        <button className="bg-red-500 w-full md:w-1/2 p-2">Pay with Stripe</button>
+                        <button className="w-full md:w-1/2 p-2 font-bebas py-3 px-6 text-primary-500  bg-product-secondary hover:bg-btnColor hover:text-secondary-300 transition ease-in-out duration-300">Checkout</button>
                     </div>
                 )}
             

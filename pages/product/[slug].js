@@ -3,7 +3,6 @@ import {client, urlFor} from '@/lib/client'
 import {AiOutlineStar, AiFillStar, AiFillMinusCircle, AiFillPlusCircle} from 'react-icons/ai'
 import {Product} from '../../components'
 import { useStateContext } from '@/context/StateContext'
-import { motion } from 'framer-motion'
 
 const ProductDetails = ({product, products}) => {
     const [index, setIndex] = useState(0)
@@ -11,10 +10,9 @@ const ProductDetails = ({product, products}) => {
     const {incQty, decQty, qty, onAdd} = useStateContext()
 
     const filteredProducts = products.filter(item => item.slug.current !== product.slug.current)
-    const formattedPrice = price.toLocaleString()
   return (
     
-        <div className='w-11/12 mx-auto'>
+    <div className='w-11/12 mx-auto'>
         <div className='flex flex-wrap items-center justify-center gap-6 p-4'>
         <div className='flex items-center max-w-xl h-96 md:h-[450px] overflow-y-auto'>
             <div className='flex flex-col w-1/5 border-t-2 border-l-2 border-r-2 border-product-primary'>
@@ -49,9 +47,9 @@ const ProductDetails = ({product, products}) => {
             </div>
             <div className=''>
                 <p>Details :</p>
-                <p className='text-secondary-200'>{details}</p>
+                <p className='capitalize text-secondary-200'>{details}</p>
             </div>
-            <h1 className='text-3xl font-bold'>₱ {formattedPrice}.00</h1>
+            <h1 className='text-3xl font-bold'>₱ {price.toLocaleString()}.00</h1>
             <div className=' flex items-center gap-4'>
                 <p>Quantity : </p>
                 <div className='items-center border-2 border-secondary-200 inline-flex '>
