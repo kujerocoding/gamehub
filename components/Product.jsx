@@ -1,6 +1,8 @@
 import React, { forwardRef } from 'react'
 import Link from 'next/link'
 import { urlFor } from '@/lib/client'
+import { motion } from 'framer-motion'
+
 
 const Product = ({product: {image, name, slug, price, details, tags}}) => {
 
@@ -8,7 +10,10 @@ const Product = ({product: {image, name, slug, price, details, tags}}) => {
 
   return (
     
-      <Link href={`/product/${slug.current}`} className='hover:scale-105 transition ease-in-out'>
+      <motion.div 
+      whileHover={{scale: 1.05}}
+      >
+        <Link href={`/product/${slug.current}`} >
         <div className='w-[250px] h-[450px] flex flex-col justify-between'>
             <div className='h-3/5 bg-product-primary p-4'>
               <img src={urlFor(image && image[0])} className='w-full'/>
@@ -21,6 +26,7 @@ const Product = ({product: {image, name, slug, price, details, tags}}) => {
             </div>
         </div>
       </Link>
+      </motion.div>
     
   )
 }

@@ -1,6 +1,7 @@
 import { HeroBanner, Navbar, Product, FooterBanner } from '@/components'
 import React from 'react'
 import {client} from '../lib/client'
+import { motion } from 'framer-motion'
 
 
 const index = ({products, bannerData}) => {
@@ -11,7 +12,19 @@ const index = ({products, bannerData}) => {
           <h2 className='font-inter font-bold text-xl text-primary-500 mb-4'>Popular Products</h2>
           <p className='font-inter text-sm text-primary-400'>Elevate Your Gaming Experience with Our Computer Peripherals</p>
           <div className='py-6 flex flex-wrap items-center justify-center gap-6'>
-            {products.map(product => <Product key={product._id} product={product} />)}
+            {products.map((product, i) => (
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{once: true, amount: 0.3}} 
+              transition={{duration: 0.5, delay: i * 0.3}}
+              variants={{
+                    hidden: {opacity: 0, x:-100, y: -50},
+                    visible: {opacity: 1, x:0, y:0}
+              }}
+            >
+                <Product key={product._id} product={product} />
+            </motion.div>))}
           </div>
       </div>
       <div>

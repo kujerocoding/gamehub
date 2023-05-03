@@ -3,6 +3,7 @@ import {client, urlFor} from '@/lib/client'
 import {AiOutlineStar, AiFillStar, AiFillMinusCircle, AiFillPlusCircle} from 'react-icons/ai'
 import {Product} from '../../components'
 import { useStateContext } from '@/context/StateContext'
+import { motion } from 'framer-motion'
 
 const ProductDetails = ({product, products}) => {
     const [index, setIndex] = useState(0)
@@ -80,8 +81,8 @@ const ProductDetails = ({product, products}) => {
       </div>
       <div className='py-16'>
         <p className='font-bold text-center text-xl text-primary-500 mb-4'>Related Products</p>
-        <div className=' flex gap-4 flex-wrap items-center justify-center'>
-            {filteredProducts.map(item => (
+        <div className=' flex flex-wrap items-center justify-center gap-6'>
+            {filteredProducts.map((item) => (
                 <Product key={item._id} product={item} />
             ))}
         </div>
