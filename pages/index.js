@@ -9,7 +9,7 @@ const index = ({products, bannerData}) => {
     <>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]}/>
       <div className='w-11/12 mx-auto py-16 text-center text-white'>
-          <h2 className='font-inter font-bold text-xl text-primary-500 mb-4'>Popular Products</h2>
+          <h2 className='font-inter font-bold text-xl text-primary-500 mb-4 uppercase'>Popular Products</h2>
           <p className='font-inter text-sm text-primary-400'>Elevate Your Gaming Experience with Our Computer Peripherals</p>
           <div className='py-6 flex flex-wrap items-center justify-center gap-6'>
             {products.map((product, i) => (

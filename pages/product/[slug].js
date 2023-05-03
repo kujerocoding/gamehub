@@ -80,7 +80,7 @@ const ProductDetails = ({product, products}) => {
         </div>
       </div>
       <div className='py-16'>
-        <p className='font-bold text-center text-xl text-primary-500 mb-4'>Related Products</p>
+        <p className='font-bold text-center text-xl text-primary-500 mb-4 uppercase'>Related Products</p>
         <div className=' flex flex-wrap items-center justify-center gap-6'>
             {filteredProducts.map((item) => (
                 <Product key={item._id} product={item} />
