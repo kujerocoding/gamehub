@@ -10,6 +10,7 @@ const ProductDetails = ({product, products}) => {
     const {incQty, decQty, qty, onAdd, onBuy} = useStateContext()
 
     const filteredProducts = products.filter(item => item.slug.current !== product.slug.current)
+    console.log(product);
   return (
     
     <div className='w-11/12 mx-auto'>
@@ -20,13 +21,14 @@ const ProductDetails = ({product, products}) => {
                     <img
                     key={item._key} 
                     src={urlFor(item)}
+                    alt={product.name}
                     onMouseEnter={() => setIndex(i)}
                     className='w-full h-3/4 p-2 hover:bg-btnColor border-b-2 border-product-primary transition ease-in-out duration-300'
                     />
                 ))}
             </div>
             <div className='flex items-center justify-center w-full h-full'>
-                <img src={urlFor(image && image[index])} className='w-full h-full' />
+                <img src={urlFor(image && image[index])} className='w-full h-full' alt={product.name}/>
             </div>
             
         </div>

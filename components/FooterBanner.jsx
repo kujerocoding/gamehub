@@ -17,7 +17,7 @@ const FooterBanner = ({footerBanner: {image,discount, largeText1, largeText2, sa
               visible: {opacity: 1, y:0}
         }}
         ></motion.div>
-        <motion.img src={urlFor(image)} alt="" className='max-w-xs'
+        <motion.img src={urlFor(image)} alt={product} className='max-w-xs'
         initial="hidden"
         whileInView="visible"
         viewport={{once: true, amount: 0.3}} 
