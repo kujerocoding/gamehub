@@ -48,7 +48,7 @@ const HeroBanner = ({heroBanner}) => {
             <p className='font-inter text-2xl text-primary-400 uppercase'>{heroBanner.midText}</p>
             <div>
               <Link href={`/product/${heroBanner.product}`}>
-                <button type='button' className='font-bebas  rounded-full py-4 px-8 text-primary-500  bg-product-secondary hover:bg-btnColor hover:text-secondary-300  transition ease-in-out duration-300'>
+                <button type='button' className='btn--banner'>
                   {heroBanner.buttonText}
                 </button>
               </Link>

@@ -47,7 +47,7 @@ const FooterBanner = ({footerBanner: {image,discount, largeText1, largeText2, sa
           <p className='text-primary-400 text-lg'>{saleTime}</p>
         </div>
         <Link href={`/product/${product}`}>
-            <button type='button' className='font-bebas text-secondary-300 rounded-full py-4 px-8 bg-btnColor hover:bg-product-secondary hover:text-primary-500 transition ease-in-out duration-300'>{buttonText}</button>
+            <button type='button' className='btn--banner'>{buttonText}</button>
         </Link>
       </div>
     </div>
