@@ -19,7 +19,7 @@ const HeroBanner = ({heroBanner}) => {
                   visible: {opacity: 1, y:0}
             }}
             />
-            <div className='relative w-1 h-1'>
+            <div className='relative'>
               <motion.div className='before:absolute before:-top-40 before:-right-10 before:content-bannerNew before:scale-75'
               initial="hidden"
               whileInView="visible"

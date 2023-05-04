@@ -19,8 +19,8 @@ module.exports = {
         
       },
       content: {
-        bannerNew: "url('../public/images/new.png')",
-        bannerSale: "url('../public/images/sale.png')"
+        bannerNew: "url('/images/new.png')",
+        bannerSale: "url('/images/sale.png')"
       },
       fontFamily: {
         'bebas': ['Bebas Neue', 'cursive'],
