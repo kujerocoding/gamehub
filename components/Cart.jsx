@@ -6,7 +6,6 @@ import {AiFillMinusCircle, AiFillPlusCircle} from 'react-icons/ai'
 import {BsBagX} from 'react-icons/bs'
 import { motion } from "framer-motion"
 
-
 const Cart = () => {
     
     const { totalPrice, cartItems, totalQuantities, setShowCart, toggleCartItemQuantity , onRemove} = useStateContext()
@@ -14,7 +13,7 @@ const Cart = () => {
   return (
         <div className='absolute top-0 right-0 flex bg-white/30 w-full z-50 h-full backdrop-blur-sm overflow-y-auto overflow-x-hidden'>
             <div className='basis-1/3' onClick={() => setShowCart(false)}></div>
-            <motion.div className='cart basis-2/3 p-2 md:p-8 overflow-y-auto text-primary-400'
+            <motion.div className='bg-primaryBG basis-2/3 p-2 md:p-8 overflow-y-auto text-primary-400'
                 animate={{ opacity: [0,1], x: [100,0]}}
                 transition={{duration: 0.3}}
             >
@@ -22,7 +21,7 @@ const Cart = () => {
                 <p>Your Cart (<span className="font-bold">{totalQuantities}</span>) items</p>
                 <button type='button' className="underline hover:text-primary-500" onClick={() => setShowCart(false)}>Close</button>
             </div>
-            
+
            {/*  EMPTY CART */}
             {cartItems.length < 1 && (
                 <div className="flex flex-col items-center justify-center py-16 gap-8">
@@ -83,7 +82,6 @@ const Cart = () => {
                 )}
             </motion.div>
         </div>
-
     )
     
 }

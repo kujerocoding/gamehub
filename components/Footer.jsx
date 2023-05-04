@@ -3,7 +3,7 @@ import {BsFacebook, BsInstagram, BsTwitter  } from 'react-icons/bs'
 
 const Footer = () => {
   return (
-    <footer className='bg-black'>
+    <div className='bg-black'>
       <div className='w-11/12 mx-auto gap-4 py-16 text-primary-400 font-inter'>
       <div className='flex flex-col gap-4 items-center text-center md:flex-row md:justify-around md:text-left'>
         <div>
@@ -33,7 +33,7 @@ const Footer = () => {
       </div>
       <p className='mt-16 text-xs text-center text-primary-400'>Copyright &copy; 2023 GameHub - All rights reserved.</p>
     </div>
-    </footer>
+    </div>
     
   )
 }

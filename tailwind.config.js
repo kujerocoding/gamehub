@@ -15,20 +15,12 @@ module.exports = {
         'secondary-300': '#3F3D40',
         'product-primary': '#3F3D40',
         'product-secondary': '#1E1E1E',
+        'primaryBG': '#0D0D0D'
         
       },
       content: {
         bannerNew: "url('../public/images/new.png')",
         bannerSale: "url('../public/images/sale.png')"
-      },
-      animation: {
-        'marquee': 'marquee 15s linear infinite',
-      },
-      keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(50%)' },
-          '100%': { transform: 'translateX(-50%)' },
-        }
       },
       fontFamily: {
         'bebas': ['Bebas Neue', 'cursive'],

@@ -18,7 +18,7 @@ const ProductDetails = ({product, products}) => {
             <div className='flex flex-col w-1/5 border-t-2 border-l-2 border-r-2 border-product-primary'>
                 {image?.map((item, i) => (
                     <img
-                    key={item._id} 
+                    key={item._key} 
                     src={urlFor(item)}
                     onMouseEnter={() => setIndex(i)}
                     className='w-full h-3/4 p-2 hover:bg-btnColor border-b-2 border-product-primary transition ease-in-out duration-300'
@@ -82,7 +82,7 @@ const ProductDetails = ({product, products}) => {
       <div className='py-16'>
         <p className='font-bold text-center text-xl text-primary-500 mb-4 uppercase'>Related Products</p>
         <div className=' flex flex-wrap items-center justify-center gap-6'>
-            {filteredProducts.map((item) => (
+            {filteredProducts.map(item => (
                 <Product key={item._id} product={item} />
             ))}
         </div>

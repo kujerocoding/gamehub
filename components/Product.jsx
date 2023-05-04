@@ -9,10 +9,7 @@ const Product = ({product: {image, name, slug, price, details, tags}}) => {
   const formattedPrice = price.toLocaleString()
 
   return (
-    
-      <motion.div 
-      whileHover={{scale: 1.05}}
-      >
+      <motion.div whileHover={{scale: 1.05}}>
         <Link href={`/product/${slug.current}`} >
         <div className='w-[250px] h-[450px] flex flex-col justify-between'>
             <div className='h-3/5 bg-product-primary p-4'>
