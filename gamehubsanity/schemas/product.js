@@ -41,6 +41,6 @@ export default {
         title: 'Tags',
         type: 'string',
       },
-    ],
-  }
+    ]
+}
   
